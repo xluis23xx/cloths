@@ -1,0 +1,27 @@
+.box{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .card{
+        width: 100%;
+
+        .header{
+            h2{
+                margin-bottom: 20px;
+            }
+            img{
+                margin-bottom: 16px;
+                border-radius: 50%;
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .button{
+            margin-top: 16px;
+        }
+    }
+}

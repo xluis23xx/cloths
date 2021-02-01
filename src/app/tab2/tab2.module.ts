@@ -8,12 +8,16 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+//importaciones de componentes
+import { ProfileComponentModule } from '../components/profile/profile.module';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
+    ProfileComponentModule,
     Tab2PageRoutingModule
   ],
   declarations: [Tab2Page]

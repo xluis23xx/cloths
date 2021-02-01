@@ -1,0 +1,33 @@
+ion-grid{
+    ion-row{
+      ion-col{
+        padding: 20px;
+        height: 160px;
+        .card-box{
+          background-color: rgb(110, 104, 104);
+          cursor: pointer;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          opacity: 80%;
+          h4{
+            font-size: 20px;
+            color: #000;
+          }
+        }
+       .card-box:hover{
+          opacity: 100%;
+        }
+      }
+    }
+}
+
+.content{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
