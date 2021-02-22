@@ -1,0 +1,55 @@
+.box{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .card{
+        width: 100%;
+
+        .header{
+            h2{
+                margin-bottom: 20px;
+            }
+            img{
+                margin-bottom: 16px;
+                border-radius: 50%;
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .content{
+
+            .size-box{
+                display: flex;
+                justify-content: center;
+
+                .size{
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    color: black;
+                    background: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .size.first{
+                    background: grey;
+                    color: black;
+                }
+            }
+        }
+
+        .button{
+            margin-top: 16px;
+
+            ion-button{
+                background-color: blueviolet;
+            }
+        }
+    }
+}

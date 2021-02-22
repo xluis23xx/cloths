@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+    <div class="card ion-text-center">
+      <div class="header">      
+        <h2>{{producto?.nombre}}</h2>
+        <img src="{{producto?.imagen}}" alt="">
+      </div>
+      <div class="content">
+        <h4>Sizes</h4>
+        <div class="size-box">
+          <div class="size first">S</div>
+          &nbsp;
+          &nbsp;
+          <div class="size">M</div>
+          &nbsp;
+          &nbsp;
+          <div class="size">L</div>
+        </div>
+        <h4>Precio: <span>S/. {{producto?.p_unitario}}</span></h4>
+        <h4>Stock: <span>{{producto?.stock}}</span></h4>
+      </div>
+      <div class="button">
+        <ion-button color="primary" (click)="presentModal()">Agregar al carrito
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
+        <!-- <ion-button (click)="openModal()" color="primary" size="small">Editar</ion-button> -->
+      </div>
+    </div>
+  </div>
+</ion-content>

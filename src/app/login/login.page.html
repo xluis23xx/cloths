@@ -13,14 +13,14 @@
     </ion-card-header>
 
     <ion-card-content>
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
         <ion-item>
           <ion-label position="stacked">Correo</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" required formControlName="email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" required formControlName="password"></ion-input>
         </ion-item>
         <div class="ion-text-center">
           <ion-button type="submit" (click)="onSubmit()">Log-in</ion-button>
