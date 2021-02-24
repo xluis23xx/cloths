@@ -8,12 +8,18 @@ import { DetailProductPageRoutingModule } from './detail-product-routing.module'
 
 import { DetailProductPage } from './detail-product.page';
 
+import { ConfirmCartComponentModule } from '../modals/confirm-cart/confirm-cart.module'
+
 @NgModule({
+  entryComponents: [
+    ConfirmCartComponentModule
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailProductPageRoutingModule
+    DetailProductPageRoutingModule,
+    ConfirmCartComponentModule
   ],
   declarations: [DetailProductPage]
 })

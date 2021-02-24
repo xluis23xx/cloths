@@ -6,13 +6,13 @@
             <ion-icon (click)="closeModal()" name="close-circle"></ion-icon>
         </ion-buttons>
       </ion-toolbar>
-      <ion-title>Camisa</ion-title>
+      <ion-title>{{nombre}} </ion-title>
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <div>¿Estas usted seguro de agregar al carrito?</div>
+    <div>¿Estas usted seguro de agregar al carrito de compras?</div>
       <div class="ion-text-center">
-        <ion-button type="submit">Aceptar</ion-button>
+        <ion-button type="submit" (click)="addProduct()">Aceptar</ion-button>
       </div>  
   </ion-card-content>
 </ion-card>

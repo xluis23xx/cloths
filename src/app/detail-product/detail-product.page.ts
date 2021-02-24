@@ -29,10 +29,21 @@ export class DetailProductPage implements OnInit {
     this.getProduct();
   }
 
-  async presentModal() {
+  async presentModal(producto:productI) {
     const modal = await this.modalController.create({
       component: ConfirmCartComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'idProducto': this.producto.idProducto,
+        'codigo': this.producto.codigo,
+        'nombre': this.producto.nombre,
+        'stock': this.producto.stock,
+        'descripcion': this.producto.descripcion,
+        'imagen': this.producto.imagen,
+        'estado': this.producto.estado,
+        'idCat': this.producto.idCat,
+        'p_unitario': this.producto.p_unitario
+      }
     });
     return await modal.present();
   }
@@ -49,10 +60,8 @@ export class DetailProductPage implements OnInit {
         if(result.status=="200"){
           this.producto = result.response[0];
           console.log(this.producto);
+          console.log(this.producto.idProducto)
         }
-      },
-      error => {
-
       }
     )
   }

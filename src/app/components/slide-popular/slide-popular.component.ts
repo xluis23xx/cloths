@@ -28,6 +28,7 @@ export class SlidePopularComponent implements OnInit {
       result => {
         if(result.status=="200"){
           this.products = result.response;
+          console.log(this.products);
         }
       },
       error => {

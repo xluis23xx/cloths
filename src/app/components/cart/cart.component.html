@@ -9,12 +9,12 @@
 </ion-grid>
 
 <ion-list>
-  <ion-item>
+  <ion-item *ngFor="let items of productosArray">
     <ion-avatar slot="start">
       <ion-img [src]=""></ion-img>
     </ion-avatar>
     <ion-label>
-      Producto 1
+      {{productosArray.nombre}}
     </ion-label>
     <ion-label>S/.50.00</ion-label>
     <ion-fab-button size="small">
