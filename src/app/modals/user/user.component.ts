@@ -58,6 +58,7 @@ export class UserComponent implements OnInit {
 
 		console.log(user);
 		
+    //comentariossafsdfdsfdsf
 		// this._userS.createUser(user).subscribe(
 		// 	result => {
 		// 		console.log(result);
