@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { UserComponent } from '../../modals/user/user.component';
 import { userI } from '../../models/user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,10 @@ import { userI } from '../../models/user';
 export class ProfileComponent implements OnInit {
   public user:userI;
 
-  constructor(public modalController: ModalController) { 
+  constructor(
+    public modalController: ModalController,
+    private _router:Router
+    ) { 
     this.user = JSON.parse(localStorage.getItem('user'))
   }
 
@@ -30,6 +34,11 @@ export class ProfileComponent implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  closeSesion(){
+    localStorage.removeItem('user');
+    this._router.navigate(['/login']);	
   }
 
 }
