@@ -9,19 +9,19 @@
 </ion-grid>
 
 <ion-list>
-  <ion-item *ngFor="let items of productosArray">
+  <ion-item *ngFor="let item of items">
     <ion-avatar slot="start">
-      <ion-img [src]=""></ion-img>
+      <ion-img [src]="item.imagen"></ion-img>
     </ion-avatar>
     <ion-label>
-      {{productosArray.nombre}}
+      {{item.nombre}}
     </ion-label>
-    <ion-label>S/.50.00</ion-label>
-    <ion-fab-button size="small">
+    <ion-label>{{item.p_unitario}}</ion-label>
+    <ion-fab-button size="small" (click)="remove(item)">
       <ion-icon name="close-outline"></ion-icon>
     </ion-fab-button>
   </ion-item>
-  <ion-item>
+  <!-- <ion-item>
     <ion-avatar slot="start">
       <ion-img [src]=""></ion-img>
     </ion-avatar>
@@ -68,7 +68,7 @@
     <ion-fab-button size="small">
       <ion-icon name="close-outline"></ion-icon>
     </ion-fab-button>
-  </ion-item>
+  </ion-item> -->
 </ion-list>
 
 <ion-grid>
@@ -80,7 +80,7 @@
     </ion-col>
     <ion-col>
       <div class="ion-text-end">
-        <h3>S/.100</h3>
+        <h3>{{totalPrice}}</h3>
       </div>
     </ion-col>
   </ion-row>

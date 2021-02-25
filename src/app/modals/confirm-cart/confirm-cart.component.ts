@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { productI } from '../../models/producto';
+import { CartService } from '../../services/cart.service'
 
 @Component({
   selector: 'app-confirm-cart',
@@ -18,13 +19,19 @@ export class ConfirmCartComponent implements OnInit {
   @Input() idCat:BigInteger;
   @Input() p_unitario:number;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,private _cartService:CartService) { }
 
   ngOnInit() {
-  
+
   }
 
-  addProduct(){
+  // addProduct(){
+  //   // localStorage.setItem('producto', JSON.stringify(producto));
+  //   // console.log(producto);
+  // }
+
+  public addCart()
+  {
     let producto:productI = {
       idProducto:this.idProducto,
       codigo:this.codigo,
@@ -36,10 +43,11 @@ export class ConfirmCartComponent implements OnInit {
       idCat:this.idProducto,
       p_unitario:this.p_unitario
     }
-    
-    localStorage.setItem('producto', JSON.stringify(producto));
-    console.log(producto);
+
+    // console.log(producto);
+    this._cartService.changeCart(producto);
   }
+
 
   closeModal(){
     this.modalController.dismiss();

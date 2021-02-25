@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="card">
+    <div class="content">
+      <div class="item" (click)="onDetail(item.idProducto)" *ngFor="let item of products"> 
+        <img src="{{items.imagen}}" alt="">
+        <h5>{{items.nombre}}</h5>
+      </div>
+    </div>
+  </div>
 </ion-content>

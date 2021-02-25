@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService, userI } from '../services/user.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+// import { userI } from '../models/user';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginPage implements OnInit {
   public loginForm: any;
   public showError:boolean;
   public textError:string;
+  public usuario:userI;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,9 +42,10 @@ export class LoginPage implements OnInit {
 		
 		this._userS.authUser(user).subscribe(
 			result => {
-				console.log(result);
 				if(result.status == "200"){
 					this._router.navigate(['/tabs/tab1']);	
+          this.usuario = result.response[0];
+          localStorage.setItem('user',JSON.stringify(this.usuario));
 				}
 			},
 			error => {

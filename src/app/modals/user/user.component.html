@@ -9,30 +9,30 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <form>
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate(updateForm)">
       <ion-item>
         <ion-label position="stacked">Nombres</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="name" [ngModel]="name" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Apellidos</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" required formControlName="lastname" [ngModel]="lastname"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-label position="stacked">Fecha de Nacimiento</ion-label>
         <ion-input type="date"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
       <ion-item>
         <ion-label position="stacked">Correo</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" required formControlName="email" [ngModel]="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" required formControlName="password"></ion-input>
       </ion-item>
 
       <div class="ion-text-center">
