@@ -46,6 +46,8 @@ export class ConfirmCartComponent implements OnInit {
 
     // console.log(producto);
     this._cartService.changeCart(producto);
+    
+    this.closeModal();
   }
 
 
